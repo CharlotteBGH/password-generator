@@ -18,6 +18,6 @@ View the deployed application here: https://charlottebgh.github.io/password-gene
 
 
 ## Usage
-To test the password generator, try entering a number that is below 8 (to show it will not create a password) and a number that is 8 or above (to generate a password)
+To test the password generator, try entering a number that is below 8 (to show it will not create a password) and a number that is 8 or above (to generate a password).
 ## License
 MIT. Please see original GitHub repository. 
