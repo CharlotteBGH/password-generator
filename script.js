@@ -92,16 +92,6 @@ var upperCasedCharacters = [
   "Z",
 ];
 
-// State all of elements that the password needs to include, and all the returns that are available
-var passwordRequirements = {
-  passLength: 0,
-  passNumber: numericCharacters,
-  passLower: lowerCasedCharacters,
-  passUpper: upperCasedCharacters,
-  passSpecial: specialCharacters,
-};
-console.log(passwordRequirements);
-
 //What does this bit do?
 function writePassword() {
   var password = generatePassword();
@@ -113,7 +103,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Function to generate password with user input
+// Function to generate password with user input - THE VARIABLES ARE WHAT THE USER HAS ENTERED
 function generatePassword() {
   var userLength = 0;
   var userSpecial;
@@ -122,46 +112,52 @@ function generatePassword() {
   var userNumber;
 
   userLength = 0;
-  passwordRequirements.passLength = 0;
   output = "";
 
-  // Rules for what happens with the user input
-  while (userLength < 8 || userLength > 128) {
-    userLength = prompt(
-      "The fun is about to start! Please choose how many characters you'd like your password to be by selecting a number between 8 and 128. "
+  //Start prompts for user to select password
+  if (
+    confirm(
+      "The fun is about to start! In order to create your password, we'll need you to choose how many characters you'd like it to be. Click 'OK' to continue."
+    ) == false
+  ) {
+    alert("We're sad to see you leave, but you're welcome back anytime!");
+    return "Click below to generate your password";
+  } else {
+    userLength = prompt("Great. Now please enter a number between 8 and 128.");
+  }
+
+  // Make sure the number the user enters is a) between 8 and 128 and b) a number and not anything else
+
+  if (userLength > 7 && userLength < 129) {
+    passwordOptions();
+  } else if (userLength < 7 || userLength > 129) {
+    prompt(
+      "Close! But the number needs to be between 8 and 128. Please try again."
     );
-    // Define what happens if the user doesn't proceed any further by clicking 'Cancel'
-    if (userLength === null) {
-      prompt(
-        "Are you sure we can't tempt you? Enter a number between 8 and 128 to receive your secure password."
-      );
-    } else {
-      ///////////
-    }
+  } else {
+    userLength =
+      specialCharacters || lowerCasedCharacters || upperCasedCharacters;
+  }
+  prompt(
+    "Good idea, but we're looking for a number (e.g. 1, 2, 3) between 8 and 128. Please try again."
+  );
+  if (userLength === null) {
+    alert("We're sad to see you leave, but you're welcome back anytime!");
+    return "Click below to generate your password";
   }
 }
 
-// Function to prompt user for password options - between 8 + 128 characters.
-//Do they want numbers/lowercase/uppercase/special characters?
-//Input needs to be validated
-//Random password needs to display in box
-
-//What is this bit doing?
-
-function getPasswordOptions() {}
-getPasswordOptions();
-
-// Function for getting a random element from an array
-
-//let randomElement =
-//everyCharacter[Math.floor(Math.random() * everyCharacter.length)];
-//console.log(randomElement);
-
-//Or do I need to do it for every item? i.e. numeric, uppercase, lowercase, special
-
-//function getRandom() {
-//let randomElement =
-//everyCharacter[Math.floor(Math.random() * everyCharacter.length)];
-//}
-//getRandom();
-//console.log(randomElement);
+function passwordOptions() {
+  userSpecial = confirm(
+    "Excellent work. Now, since you're so special, would you like to include a special character? E.g. $*%."
+  );
+  userUpper = confirm(
+    "Next up(per)...capital letters! Would you like to include one?"
+  );
+  userLower = confirm(
+    "How about a lowercase letter? We hear they're all the rage..."
+  );
+  userNumber = confirm(
+    "What about a number? We're not trying to flirt, honestly!"
+  );
+}
