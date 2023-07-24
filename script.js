@@ -103,6 +103,15 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//Stating the criteria that the password must meet
+passCriteria = {
+  passLength: 0,
+  specialCharacters,
+  numericCharacters,
+  lowerCasedCharacters,
+  upperCasedCharacters,
+};
+
 // Function to generate password with user input - THE VARIABLES ARE WHAT THE USER HAS ENTERED
 function generatePassword() {
   var userLength = 0;
@@ -113,6 +122,7 @@ function generatePassword() {
 
   userLength = 0;
   output = "";
+  passCriteria.passLength = 0;
 
   //Start prompts for user to select password
   if (
@@ -127,9 +137,11 @@ function generatePassword() {
   }
 
   // Make sure the number the user enters is a) between 8 and 128 and b) a number and not anything else
-
+  // If user enters correctly, let them proceed to the next options.
   if (userLength > 7 && userLength < 129) {
     passwordOptions();
+
+    //If user doesn't enter correctly, prompt them to try again
   } else if (userLength < 7 || userLength > 129) {
     prompt(
       "Close! But the number needs to be between 8 and 128. Please try again."
@@ -147,6 +159,7 @@ function generatePassword() {
   }
 }
 
+// Give the users password prompts
 function passwordOptions() {
   userSpecial = confirm(
     "Excellent work. Now, since you're so special, would you like to include a special character? E.g. $*%."
@@ -160,4 +173,26 @@ function passwordOptions() {
   userNumber = confirm(
     "What about a number? We're not trying to flirt, honestly!"
   );
+  //Get the password to show up in the box
+  return outcome;
+}
+
+//Continue the prompt box journey based on users' responses
+//First of all, need to sort out the password length, making sure the password generator has at least one variable to choose from.
+while (passCriteria.passLength < userLength) {
+  if (
+    userSpecial === false &&
+    userUpper === false &&
+    userLower === false &&
+    userNumber === false
+  ) {
+    alert(
+      "Your password is depending on you! To any further, you must select at least one type of character out of numbers, lowercase, uppercase and special characters."
+    );
+    passwordOptions();
+  }
+  //To ensure that the password has at least one of the characters the user has specifically selected, make sure the loop grabs at least one special character/ uppercase/ lowercase / number from the  and adds it to the end
+  else {
+    if 
+  }
 }
