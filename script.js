@@ -149,8 +149,8 @@ function generatePassword() {
   if (userLength >= 8 && userLength <= 128) {
     passwordOptions();
     } else if (userLength < 8 && userLength > 128) {
-    prompt(
-      "Close! But the number needs to be between 8 and 128. Please try again."
+    alert(
+      "Close! But the number needs to be between 8 and 128. Please try again by clicking the 'Generate Password' button."
     );
 
     //If user doesn't enter correctly, prompt them to try again
