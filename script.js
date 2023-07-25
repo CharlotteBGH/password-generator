@@ -157,6 +157,7 @@ function generatePassword() {
     prompt(
       "Good idea, but we're looking for a number (e.g. 1, 2, 3) between 8 and 128. Please try again."
     );
+     passwordOptions();
   } else {
     prompt(
       "Close! But the number needs to be between 8 and 128. Please try again."
