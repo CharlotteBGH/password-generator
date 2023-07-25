@@ -155,14 +155,13 @@ function generatePassword() {
     return "Click below to generate your password";
   } else if (typeof userLength !== "number") {
     prompt(
-      "Good idea, but we're looking for a number (e.g. 1, 2, 3) between 8 and 128. Please try again."
+      "Good idea, but we're looking for a number (e.g. 11, 45, 63) between 8 and 128. Please try again."
     );
      passwordOptions();
-  } else {
+  } else if (userLength < 8 && userLength > 128) {
     prompt(
       "Close! But the number needs to be between 8 and 128. Please try again."
     );
-    passwordOptions();
   }
   // Give the users password prompts
   function passwordOptions() {
