@@ -14,8 +14,7 @@ Character types: Lowercase, Uppercase, Numeric, Special characters ($@%&*, etc.)
 
 View the deployed application here: https://charlottebgh.github.io/password-generator/
 
-![image](https://github.com/CharlotteBGH/console-finances/assets/99615123/a518ba84-0641-4235-9a42-8d2743934662)
-
+![image](https://github.com/CharlotteBGH/password-generator/assets/99615123/bbda27ed-ae19-483d-95e2-e10b5d50c3ed)
 
 ## Usage
 To test the password generator, try entering a number that is below 8 (to show it will not create a password) and a number that is 8 or above (to generate a password).
