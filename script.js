@@ -210,7 +210,7 @@ function generatePassword() {
           passCriteria.lowerCasedCharacters[Math.floor(Math.random() * 26)];
         output = output + low;
         passCriteria.passLength++;
-      } else if (userNumber === true && passCriteria.passLength < userLength) {
+      else (userNumber === true && passCriteria.passLength < userLength) {
         var num =
           passCriteria.numericCharacters[Math.floor(Math.random() * 10)];
         output = output + num;
