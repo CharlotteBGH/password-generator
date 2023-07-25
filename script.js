@@ -146,7 +146,7 @@ function generatePassword() {
 
   // Make sure the number the user enters is a) between 8 and 128 and b) a number and not anything else
   // If user enters correctly, let them proceed to the next options.
-  if (userLength > 8 && userLength < 128) {
+  if (userLength >= 8 && userLength <= 128) {
     passwordOptions();
     } else if (userLength < 8 && userLength > 128) {
     prompt(
