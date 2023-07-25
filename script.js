@@ -218,7 +218,7 @@ function generatePassword() {
         passCriteria.passLength++;
       }
     }
+    }
     return output;
-  }
 }
 }
