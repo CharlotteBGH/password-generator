@@ -200,17 +200,20 @@ function generatePassword() {
           passCriteria.specialCharacters[Math.floor(Math.random() * 23)];
         output = output + spec;
         passCriteria.passLength++;
-      } else if (userSpecial === true && passCriteria.passLength < userLength) {
+      }
+      if (userSpecial === true && passCriteria.passLength < userLength) {
         var up =
           passCriteria.upperCasedCharacters[Math.floor(Math.random() * 26)];
         output = output + up;
         passCriteria.passLength++;
-      } else if (userLower === true && passCriteria.passLength < userLength) {
+      }
+      if (userLower === true && passCriteria.passLength < userLength) {
         var low =
           passCriteria.lowerCasedCharacters[Math.floor(Math.random() * 26)];
         output = output + low;
         passCriteria.passLength++;
-      else (userNumber === true && passCriteria.passLength < userLength) {
+      }
+      if (userNumber === true && passCriteria.passLength < userLength) {
         var num =
           passCriteria.numericCharacters[Math.floor(Math.random() * 10)];
         output = output + num;
