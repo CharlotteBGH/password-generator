@@ -192,6 +192,7 @@ function generatePassword() {
     }
     //To ensure that the password has at least one of the characters the user has specifically selected, make sure the loop grabs at least one special character/ uppercase/ lowercase / number from the  and adds it to the end
     else {
+    while (passCriteria.passLength < userLength) {
       if (userSpecial === true && passCriteria.passLength < userLength) {
         var spec =
           passCriteria.specialCharacters[Math.floor(Math.random() * 23)];
