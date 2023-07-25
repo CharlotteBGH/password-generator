@@ -136,7 +136,7 @@ function generatePassword() {
   if (
     confirm(
       "The fun is about to start! In order to create your password, we'll need you to choose how many characters you'd like it to be. Click 'OK' to continue."
-    ) === null
+    ) === false
   ) {
     alert("We're sad to see you leave, but you're welcome back anytime!");
     return "Click below to generate your password";
@@ -150,7 +150,7 @@ function generatePassword() {
     passwordOptions();
 
     //If user doesn't enter correctly, prompt them to try again
-  } else if ((userLength === null)) {
+  } else if ((userLength === false)) {
     alert("We're sad to see you leave, but you're welcome back anytime!");
     return "Click below to generate your password";
   } else if (typeof userLength !== "number") {
