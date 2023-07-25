@@ -161,6 +161,7 @@ function generatePassword() {
     prompt(
       "Close! But the number needs to be between 8 and 128. Please try again."
     );
+    passwordOptions();
   }
   // Give the users password prompts
   function passwordOptions() {
