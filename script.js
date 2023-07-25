@@ -149,20 +149,20 @@ function generatePassword() {
   if (userLength >= 8 && userLength <= 128) {
     passwordOptions();
     } else if (userLength < 8 && userLength > 128) {
-    alert(
-      "Close! But the number needs to be between 8 and 128. Please try again by clicking the 'Generate Password' button."
+    prompt(
+      "Close! But we're looking for a number (e.g. 11, 45, 63) between 8 and 128. Please try again."
     );
-    confirm ("The fun is about to start! In order to create your password, we'll need you to choose how many characters you'd like it to be. Click 'OK' to continue.");
+
 
     //If user doesn't enter correctly, prompt them to try again
   } else if ((userLength === false)) {
     alert("We're sad to see you leave, but you're welcome back anytime!");
     return "Click below to generate your password";
   } else if (typeof userLength !== "number") {
-    alert(
-      "Close, but we're looking for a number (e.g. 11, 45, 63) between 8 and 128. Please try again by reclicking the red 'Generate Password'button."
+    prompt(
+      "Close, but we're looking for a number (e.g. 11, 45, 63) between 8 and 128. Please try again."
     );
-    confirm ("The fun is about to start! In order to create your password, we'll need you to choose how many characters you'd like it to be. Click 'OK' to continue.");
+  
   }
   // Give the users password prompts
   function passwordOptions() {
