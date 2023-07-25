@@ -150,7 +150,7 @@ function generatePassword() {
     passwordOptions();
 
     //If user doesn't enter correctly, prompt them to try again
-  } else if ((userLength = null)) {
+  } else if ((userLength === null)) {
     alert("We're sad to see you leave, but you're welcome back anytime!");
     return "Click below to generate your password";
   } else if (typeof userLength !== "number") {
