@@ -201,7 +201,7 @@ function generatePassword() {
         output = output + spec;
         passCriteria.passLength++;
       }
-      if (userSpecial === true && passCriteria.passLength < userLength) {
+      if (userUpper === true && passCriteria.passLength < userLength) {
         var up =
           passCriteria.upperCasedCharacters[Math.floor(Math.random() * 26)];
         output = output + up;
